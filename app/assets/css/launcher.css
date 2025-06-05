@@ -981,6 +981,14 @@ body, button {
     align-items: center;
 }
 
+.loginOptionsMainContent_img-onyx-studio {
+    width: 10em;
+}
+
+.loginOptionsMainContent_espace {
+    height: 1em;
+}
+
 .loginOptionActions {
     display: flex;
     flex-direction: column;
@@ -988,7 +996,7 @@ body, button {
 }
 
 .loginOptionButtonContainer {
-    width: 16em;
+    width: 17em;
 }
 
 .loginOptionButton {

@@ -35,8 +35,8 @@ loginPasswordDisclaimer1 = "Your password is sent directly to mojang and never s
 loginPasswordDisclaimer2 = "{appName} is not affiliated with Mojang AB."
 
 [ejs.loginOptions]
-loginOptionsTitle = "Login Options"
-loginWithMicrosoft = "Login with Microsoft"
+loginOptionsTitle = "Bienvenue !"
+loginWithMicrosoft = "Connectez-vous avec Microsoft"
 loginWithMojang = "Login with Mojang"
 cancelButton = "Cancel"
 
@@ -124,7 +124,7 @@ whatsNew = "What's New"
 updateReleaseNotes = "Update Release Notes"
 
 [ejs.waiting]
-waitingText = "Waiting for Microsoft.."
+waitingText = "En attente de Microsoft.."
 
 [ejs.welcome]
 continueButton = "CONTINUE"
