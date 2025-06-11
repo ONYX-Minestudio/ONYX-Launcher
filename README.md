@@ -4,7 +4,5 @@
 
 <em><h5 align="center">Copyright © 2025 Onyx-Studio</h5></em>
 
-<em><h5 align="center">Tous droits réservés.</h5></em>
-<em><h5 align="center">Le code ajouté, modifié ou développé pour le Launcher-Onyx est protégé par le droit d’auteur. Toute reproduction, distribution ou utilisation sans autorisation explicite est interdite.</h5></em>
-
-<p align="center">Ce logiciel est sous licence</p>
+<em><h5>Tous droits réservés.</h5></em>
+<em><h5>Le code ajouté, modifié ou développé pour le Launcher-Onyx est protégé par le droit d’auteur. Toute reproduction, distribution ou utilisation sans autorisation explicite est interdite.</h5></em>
