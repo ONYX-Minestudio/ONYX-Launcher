@@ -1,7 +1,7 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "ONYX Launcher"
+title = "Onyx Launcher"
 
 [ejs.landing]
 mediaGitHubURL = "https://github.com/ONYX-Minestudio/ONYX-Launcher"
