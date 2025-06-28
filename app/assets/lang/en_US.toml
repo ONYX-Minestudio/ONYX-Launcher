@@ -127,7 +127,7 @@ updateReleaseNotes = "Update Release Notes"
 waitingText = "En attente de Microsoft.."
 
 [ejs.welcome]
-continueButton = "CONTINUE"
+continueButton = "Suivant"
 
 
 [js.discord]

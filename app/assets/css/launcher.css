@@ -64,7 +64,7 @@ body, button {
     display: flex;
     flex-direction: column;
     transition: background-color 1s ease;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
+    /* background-color: rgba(0, 0, 0, 0.5); */
     -webkit-user-select: none;
 }
 
@@ -215,14 +215,16 @@ body, button {
  *                                                                             *
  ******************************************************************************/
 
+
 #welcomeContainer {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: calc(100% + 22px);
     width: 100%;
-    background: rgba(0, 0, 0, 0.50);
+    top: -22px;
+    /* background: rgba(0, 0, 0, 0.50); */
 }
 
 #welcomeContent {
@@ -230,99 +232,80 @@ body, button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    top: -10%;
-    position: relative;
-}
-
-/*
-.cloudDiv {
-    position: absolute;
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.cloudTop {
-    height: 50%;
-    width: 100%;
-    background-image: url('../images/cloudTrans.png');
-    animation: clouds1 80s linear infinite;
-    background-size: cover;
-}
-
-.cloudBottom {
-    height: 50%;
-    width: 100%;
-    background-image: url('../images/cloudTrans2.png');
-    animation: clouds2 70s linear infinite;
-    background-size: cover;
-}
-
-@keyframes clouds1 {
-    to {
-        background-position: 200%;
-    }
-}
-@keyframes clouds2 {
-    to {
-        background-position: 230%;
-    }
-}
-*/
-
-#welcomeImageSeal {
-    border-radius: 50%;
-    border: 2px solid #cad7e1;
-    background: rgba(1, 2, 1, 0.5);
-    height: 125px;
-    width: 125px;
-    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
-    margin-bottom: 5%;
-    margin-top: 10%;
+    /* background-color: violet; */
 }
 
 #welcomeHeader {
-    font-family: 'Avenir Medium';
     text-align: center;
     color: white;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
-    font-size: 20px;
-    text-shadow: white 0px 0px 0px;
+    z-index: 100;
+
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    font-size: 50px;
+
+    /* background-color: #23aa23; */
+    height: 28%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#welcomeDescription {
-    text-align: justify;
-    font-size: 13px;
-    font-weight: 100;
-    text-shadow: rgba(255, 255, 255, 0.75) 0px 0px 20px
+#welcome_ContenerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12%;
+    width: 100%;
+    z-index: 100;
 }
 
-#welcomeDescCTA {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 100;
-    text-shadow: rgba(255, 255, 255, 0.75) 0px 0px 20px
+#welcomeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 58%;
+    width: 15%;
+    background-color: rgba(255, 255, 255, 0.225);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    font-family: "Knewave", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
+
+#welcomeButton:hover {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.56);
+    border-right: 2px solid rgba(255, 255, 255, 0.56);
+}
+
 
 /* Login button styles. */
-#welcomeButton {
-    background: none;
-    font-weight: bold;
-    letter-spacing: 2px;
+/* #welcomeButton {
+    
+    display: flex;
+    justify-content: center;
     border: none;
+    cursor: pointer;
+
     padding: 15px 5px;
     margin: 10px 0px;
-    cursor: pointer;
     position: relative;
-    right: -20px;
+    right: -20px; 
     transition: 0.5s ease;
     margin-top: 5%;
     margin-bottom: -5%;
-}
-#welcomeButton:disabled {
+    background: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+}*/
+/* #welcomeButton:disabled {
     color: rgba(255, 255, 255, 0.75);
     pointer-events: none;
 }
@@ -334,8 +317,8 @@ body, button {
 #welcomeButton:active {
     color: #c7c7c7;
     text-shadow: 0px 0px 20px #c7c7c7;
-}
-#welcomeSVG {
+} */
+/* #welcomeSVG {
     -webkit-transform: translate3d(0, 0, 0);
     overflow: visible;
     transform: rotate(90deg);
@@ -356,7 +339,7 @@ body, button {
 }
 #welcomeButton:disabled #welcomeSVG .arrowLine {
     stroke: rgba(255, 255, 255, 0.75);
-}
+} */
 
 #welcomeButtonContent {
     display: flex;
@@ -884,10 +867,11 @@ body, button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: calc(100% + 22px);
     width: 100%;
+    top: -22px;
     transition: filter 0.25s ease;
-    background: rgba(0, 0, 0, 0.50);
+    /* background: rgba(0, 0, 0, 0.50); */
 }
 
 #waitingContent {
@@ -963,10 +947,11 @@ body, button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: calc(100% + 22px);
     width: 100%;
+    top: -22px;
     transition: filter 0.25s ease;
-    background: rgba(0, 0, 0, 0.50);
+    /* background: rgba(0, 0, 0, 0.50); */
 }
 
 #loginOptionsContent {
@@ -982,11 +967,11 @@ body, button {
 }
 
 .loginOptionsMainContent_img-onyx-studio {
-    width: 10em;
+    width: 12.5em;
 }
 
 .loginOptionsMainContent_espace {
-    height: 1em;
+    height: 2em;
 }
 
 .loginOptionActions {

@@ -1,0 +1,8 @@
+#welcomeBackground {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* background-color: rebeccapurple; */
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.50);
+}

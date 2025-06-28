@@ -5,16 +5,14 @@ const ConfigManager = require('./configmanager')
 
 
 // Old WesterosCraft url.
-exports.REMOTE_DISTRO_URL = 'http://mc.westeroscraft.com/WesterosCraftLauncher/distribution.json'
-// exports.REMOTE_DISTRO_URL = 'https://onyx-studio.ct.ws/np-empire/distribution.json'
-// exports.np_empire = 'http://www.onyx-studio.ct.ws/nebula/distribution.json'
-// exports.ditri_np_empire = 'https://onyx-studio.ct.ws/np-empire/distribution.json'
+// exports.DISTRO_FILE = 'http://mc.westeroscraft.com/WesterosCraftLauncher/distribution.json'
+exports.DISTRIBUTION_FILE = 'https://www.dropbox.com/scl/fi/41xymszmw19aqkch1xs3m/distribution.json?rlkey=mo4cz8p89nd9bsqaexk8fb2lg&st=2ym36men&dl=1'
 
 const api = new DistributionAPI(
     ConfigManager.getLauncherDirectory(),
-    console.log('[DEBUG]: DistributionAPI a ete charger'),
-    null, // Injected forcefully by the preloader.
-    exports.REMOTE_DISTRO_URL,
+    null,
+    null,
+    exports.DISTRIBUTION_FILE,
     false
 )
 

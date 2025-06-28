@@ -15,6 +15,4 @@ sourceGithubLink = "https://github.com/ONYX-Minestudio/ONYX-Launcher"
 supportLink = "https://github.com/ONYX-Minestudio/ONYX-Launcher/issues"
 
 [ejs.welcome]
-welcomeHeader = "Bienvenue sur ONYX Launcher"
-welcomeDescription = "Onyx launcher se compose d'actuellement que d'un serveur qui se nomme NP Empire"
-welcomeDescCTA = "Vous n’êtes qu’à quelques clics de NP Empire."
+welcomeHeader = "Bienvenue"

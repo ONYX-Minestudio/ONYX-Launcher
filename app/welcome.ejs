@@ -1,17 +1,31 @@
-<div id="welcomeContainer" style="display: none;">
-    <!--<div class="cloudDiv">
-        <div class="cloudTop"></div>
-        <div class="cloudBottom"></div>
-    </div>-->
+<!-- CSS -->
+<link rel="stylesheet" href="assets/css/background-true.css">
+<!-- icone personalisé -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Knewave&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+ 
+
+ <div id="welcomeContainer" style="display: none;">
+    <div id="welcomeBackground"></div>
+
     <div id="welcomeContent">
-        <img id="welcomeImageSeal" src="assets/images/SealCircle.png"/>
-        <span id="welcomeHeader"><%- lang('welcome.welcomeHeader') %></span>
-        <span id="welcomeDescription"><%- lang('welcome.welcomeDescription') %></span>
-        <br>
-        <span id="welcomeDescCTA"><%- lang('welcome.welcomeDescCTA') %></span>
-        <button id="welcomeButton">
+        <div id="welcomeHeader"><%- lang('welcome.welcomeHeader') %></div>
+        <!-- <span id="welcomeHeader"><%- lang('welcome.welcomeHeader') %></span> -->
+
+        <div id="welcome_ContenerButton">
+            <div id="welcomeButton"><%- lang('welcome.continueButton') %></div>
+        </div>
+        
+        <!-- <button id="welcomeButton">
+            <div id="welcomeSVG"></div>
+            
+            <%- lang('welcome.continueButton') %>
             <div id="welcomeButtonContent">
-                <%- lang('welcome.continueButton') %>
+                <div id="welcomeButton_personalise">
+                    <%- lang('welcome.continueButton') %>
+                </div>
                 <svg id="welcomeSVG" viewBox="0 0 24.87 13.97">
                     <defs>
                         <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;transition: 0.25s ease;}</style>
@@ -19,7 +33,7 @@
                     <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
                 </svg>
             </div>
-        </button>
+        </button> -->
     </div>
     <script src="./assets/js/scripts/welcome.js"></script>
 </div>
