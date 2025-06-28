@@ -5,9 +5,9 @@
   "description": "Minecraft Launcher de Onyx-Studio.",
   "author": "Daniel Scalzi (https://github.com/dscalzi/) and modified by Onyx-studio (dev = Nanofly)",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/ONYX-Minestudio/ONYX-Launcher",
+  "homepage": "https://github.com/Onyx-Minestudio/Onyx-Launcher",
   "bugs": {
-    "url": "https://github.com/ONYX-Minestudio/ONYX-Launcher/issues"
+    "url": "https://github.com/Onyx-Minestudio/Onyx-Launcher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -46,6 +46,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ONYX-Minestudio/ONYX-Launcher.git"
+    "url": "git+https://github.com/Onyx-Minestudio/Onyx-Launcher.git"
   }
 }
