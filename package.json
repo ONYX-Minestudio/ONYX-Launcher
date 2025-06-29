@@ -1,9 +1,9 @@
 {
   "name": "onyx-launcher",
-  "version": "0.0.1",
-  "productName": "Onyx-Studio",
-  "description": "Minecraft Launcher de Onyx-Studio.",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/) and modified by Onyx-studio (dev = Nanofly)",
+  "version": "0.0.2",
+  "productName": "Onyx-Minestudio",
+  "description": "Minecraft Launcher of Onyx-Minestudio.",
+  "author": "Daniel Scalzi (https://github.com/dscalzi/) and modified by Onyx-Minestudio (dev = Nanofly)",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/Onyx-Minestudio/Onyx-Launcher",
   "bugs": {
