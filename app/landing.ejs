@@ -1,5 +1,144 @@
-<div id="landingContainer" style="display: none;">
-    <div id="upper">
+<!-- CSS -->
+ <link rel="stylesheet" href="assets/css/launcher.css">
+<!-- font -->
+ <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chewy&family=Knewave&display=swap" rel="stylesheet">
+
+ <div id="landingContainer" style="display: none;">
+    
+    <div class="page-principale">
+        <div class="haut-de-page">
+            <div class="navbar">
+                <div class="navbar_party-left">
+                    <div class="navbar_bord" id="navbar_aroudi-left"></div>
+                    <div id="navbar_encadrer-selection-page">
+
+                        <div id="navbar_home" class="navbar_contoure">
+                            <div id="navbar_encadrer-selection-page_tirret_home"></div>
+                            <svg class="navbar_img" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960">
+                                <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="navbar_bord"></div>
+                    <div id="navbar_encadrer-selection-page">
+                        <div id="navbar_NP-Empire" class="navbar_contoure">
+
+                            <div id="navbar_encadrer-selection-page_tirret_np-empire" class="display_none"></div>
+                            <img class="navbar_img" src="assets/images/SealCircle.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar_party-right">
+                    <div id="navbar_encadrer-selection-page">
+                        <div id="parametre" class="navbar_contoure">
+                            <div id="navbar_encadrer-selection-page_tirret_parametre" class="display_none"></div>
+                            <svg class="navbar_img" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e3e3e3">
+                                <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="navbar_bord" id="navbar_aroudi-right"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bas-de-page">
+            <div id="bas-de-page_home">
+                <div class="home_party-left">
+                    <div class="home-left_info">
+                        <div class="home-left_title">Info</div>
+                        <div class="home-left_separation"></div>
+                        <div class="home-left_donner">non fonctionnel</div>
+                    </div>
+                </div>
+                <div class="home_party-right">
+                    <div class="home-rigth_statu-serv">
+                        <div class="home-rigth_title">Status serveur</div>
+                        <div class="home-rigth_separation"></div>
+                        <div class="home-rigth_donner-statu-serv">non fonctionnel</div>
+                    </div>
+                    <div class="home-rigth_separateur"></div>
+                    <div class="home-rigth_liens">
+                        <div class="home-rigth_title">Liens</div>
+                        <div class="home-rigth_separation"></div>
+                        <div class="home-rigth_donner-liens">non fonctionnel</div>
+                    </div>
+                </div>
+            </div>
+            <div id="bas-de-page_np-empire" class="display_none">
+                <div id="bas-de-page_np-empire_espace"></div>
+                <div id="lower">
+                    <div id="left">
+                        <div class="bot_wrapper">
+                            <div id="content">
+                                <div id="server_status_wrapper">
+                                    <span class="bot_label" id="landingPlayerLabel"><%- lang('landing.serverStatus') %></span>
+                                    <span id="player_count"><%- lang('landing.serverStatusPlaceholder') %></span>
+                                </div>
+                                <div class="bot_divider"></div>
+                                <div id="mojangStatusWrapper">
+                                    <span class="bot_label"><%- lang('landing.mojangStatus') %></span>
+                                    <span id="mojang_status_icon">&#8226;</span>
+                                    <div id="mojangStatusTooltip">
+                                        <div id="mojangStatusTooltipTitle"><%- lang('landing.mojangStatusTooltipTitle') %></div>
+                                        <div id="mojangStatusEssentialContainer">
+                                            <!-- Essential Mojang services are populated here. -->
+                                        </div>
+                                        <div id="mojangStatusNEContainer">
+                                            <div class="mojangStatusNEBar"></div>
+                                            <div id="mojangStatusNETitle"><%- lang('landing.mojangStatusNETitle') %></div>
+                                            <div class="mojangStatusNEBar"></div>
+                                        </div>
+                                        <div id="mojangStatusNonEssentialContainer">
+                                            <!-- Non Essential Mojang services are populated here. -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="center">
+                        <div class="bot_wrapper">
+                            <div id="content">
+                                <button id="newsButton">
+                                    <!--<img src="assets/images/icons/arrow.svg" id="newsButtonSVG"/>-->
+                                    <div id="newsButtonAlert" style="display: none;"></div>
+                                    <svg id="newsButtonSVG" viewBox="0 0 24.87 13.97">
+                                        <defs>
+                                            <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;}</style>
+                                        </defs>
+                                        <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
+                                    </svg>
+                                    &#10;<span id="newsButtonText"><%- lang('landing.newsButton') %></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="right">
+                        <div class="bot_wrapper">
+                            <div id="launch_content">
+                                <button id="launch_button"><%- lang('landing.launchButton') %></button>
+                                <div class="bot_divider"></div>
+                                <button id="server_selection_button" class="bot_label"><%- lang('landing.launchButtonPlaceholder') %></button>
+                            </div>
+                            <div id="launch_details">
+                                <div id="launch_details_left">
+                                    <span id="launch_progress_label">0%</span>
+                                    <div class="bot_divider"></div>
+                                </div>
+                                <div id="launch_details_right">
+                                    <progress id="launch_progress" value="22" max="100"></progress>
+                                    <span id="launch_details_text" class="bot_label"><%- lang('landing.launchDetails') %></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bas-de-page_sitting" class="display_none"></div>
+        </div>
+    </div>
+
+    <!-- <div id="upper">
         <div id="left">
             <div id="image_seal_container">
                 <img id="image_seal" src="assets/images/SealCircle.png"/>
@@ -90,8 +229,10 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="lower">
+    </div> -->
+
+
+    <!-- <div id="lower">
         <div id="left">
             <div class="bot_wrapper">
                 <div id="content">
@@ -106,7 +247,7 @@
                         <div id="mojangStatusTooltip">
                             <div id="mojangStatusTooltipTitle"><%- lang('landing.mojangStatusTooltipTitle') %></div>
                             <div id="mojangStatusEssentialContainer">
-                                <!-- Essential Mojang services are populated here. -->
+                                Essential Mojang services are populated here.
                             </div>
                             <div id="mojangStatusNEContainer">
                                 <div class="mojangStatusNEBar"></div>
@@ -114,7 +255,7 @@
                                 <div class="mojangStatusNEBar"></div>
                             </div>
                             <div id="mojangStatusNonEssentialContainer">
-                                <!-- Non Essential Mojang services are populated here. -->
+                                Non Essential Mojang services are populated here.
                             </div>
                         </div>
                     </div>
@@ -125,7 +266,7 @@
             <div class="bot_wrapper">
                 <div id="content">
                     <button id="newsButton">
-                        <!--<img src="assets/images/icons/arrow.svg" id="newsButtonSVG"/>-->
+                        
                         <div id="newsButtonAlert" style="display: none;"></div>
                         <svg id="newsButtonSVG" viewBox="0 0 24.87 13.97">
                             <defs>
@@ -157,7 +298,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+
+
+
     <div id="newsContainer">
         <div id="newsContent" article="-1" style="display: none;">
             <div id="newsStatusContainer">
@@ -217,4 +362,5 @@
         </div>
     </div>
     <script src="./assets/js/scripts/landing.js"></script>
+    <script src="assets/js/scripts/landing-perso.js"></script>
 </div>

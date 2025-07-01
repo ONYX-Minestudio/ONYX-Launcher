@@ -128,18 +128,18 @@ document.getElementById('launch_button').addEventListener('click', async e => {
 })
 
 // Bind settings button
-document.getElementById('settingsMediaButton').onclick = async e => {
+document.getElementById('parametre').onclick = async e => {
     await prepareSettings()
     switchView(getCurrentView(), VIEWS.settings)
 }
 
 // Bind avatar overlay button.
-document.getElementById('avatarOverlay').onclick = async e => {
-    await prepareSettings()
-    switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
-        settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
-    })
-}
+// document.getElementById('avatarOverlay').onclick = async e => {
+//     await prepareSettings()
+//     switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
+//         settingsNavItemListener(document.getElementById('settingsNavAccount'), false)
+//     })
+// }
 
 // Bind selected account
 function updateSelectedAccount(authUser){
@@ -154,7 +154,7 @@ function updateSelectedAccount(authUser){
     }
     user_text.innerHTML = username
 }
-updateSelectedAccount(ConfigManager.getSelectedAccount())
+// updateSelectedAccount(ConfigManager.getSelectedAccount())
 
 // Bind selected server
 function updateSelectedServer(serv){
@@ -661,10 +661,6 @@ let newsGlideCount = 0
  */
 function slide_(up){
     const lCUpper = document.querySelector('#landingContainer > #upper')
-    const lCLLeft = document.querySelector('#landingContainer > #lower > #left')
-    const lCLCenter = document.querySelector('#landingContainer > #lower > #center')
-    const lCLRight = document.querySelector('#landingContainer > #lower > #right')
-    const newsBtn = document.querySelector('#landingContainer > #lower > #center #content')
     const landingContainer = document.getElementById('landingContainer')
     const newsContainer = document.querySelector('#landingContainer > #newsContainer')
 
