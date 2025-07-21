@@ -228,9 +228,9 @@ function createWindow() {
 
     win = new BrowserWindow({
         height: 585,
-        width: 1040,
+        width: 1000,
         minHeight: 585,
-        minWidth: 1040,
+        minWidth: 1000,
         icon: getPlatformIcon('SealCircle'),
         frame: false,
         webPreferences: {
@@ -239,10 +239,9 @@ function createWindow() {
             contextIsolation: false
         },
         backgroundColor: '#171614'
-        
     })
     remoteMain.enable(win.webContents)
-
+    // win.setAspectRatio(1000 / 585)
     const data = {
         bkid: Math.floor((Math.random() * fs.readdirSync(path.join(__dirname, 'app', 'assets', 'images', 'backgrounds')).length)),
         lang: (str, placeHolders) => LangLoader.queryEJS(str, placeHolders)

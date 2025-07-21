@@ -33,6 +33,8 @@ const ProcessBuilder          = require('./assets/js/processbuilder')
 
 // Launch Elements
 const launch_content          = document.getElementById('launch_content')
+const contener_details          = document.getElementById('details')
+
 const launch_details          = document.getElementById('launch_details')
 const launch_progress         = document.getElementById('launch_progress')
 const launch_progress_label   = document.getElementById('launch_progress_label')
@@ -51,10 +53,10 @@ const loggerLanding = LoggerUtil.getLogger('Landing')
  */
 function toggleLaunchArea(loading){
     if(loading){
-        launch_details.style.display = 'flex'
+        contener_details.style.display = 'flex'
         launch_content.style.display = 'none'
     } else {
-        launch_details.style.display = 'none'
+        contener_details.style.display = 'none'
         launch_content.style.display = 'inline-flex'
     }
 }
@@ -156,84 +158,84 @@ function updateSelectedAccount(authUser){
 }
 // updateSelectedAccount(ConfigManager.getSelectedAccount())
 
-// Bind selected server
+//Bind selected server
 function updateSelectedServer(serv){
     if(getCurrentView() === VIEWS.settings){
         fullSettingsSave()
     }
     ConfigManager.setSelectedServer(serv != null ? serv.rawServer.id : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '&#8226; ' + (serv != null ? serv.rawServer.name : Lang.queryJS('landing.noSelection'))
+    // server_selection_button.innerHTML = '&#8226; ' + (serv != null ? serv.rawServer.name : Lang.queryJS('landing.noSelection'))
     if(getCurrentView() === VIEWS.settings){
         animateSettingsTabRefresh()
     }
     setLaunchEnabled(serv != null)
 }
 // Real text is set in uibinder.js on distributionIndexDone.
-server_selection_button.innerHTML = '&#8226; ' + Lang.queryJS('landing.selectedServer.loading')
-server_selection_button.onclick = async e => {
-    e.target.blur()
-    await toggleServerSelection(true)
-}
+// server_selection_button.innerHTML = '&#8226; ' + Lang.queryJS('landing.selectedServer.loading')
+// server_selection_button.onclick = async e => {
+//     e.target.blur()
+//     await toggleServerSelection(true)
+// }
 
 // Update Mojang Status Color
-const refreshMojangStatuses = async function(){
-    loggerLanding.info('Refreshing Mojang Statuses..')
+// const refreshMojangStatuses = async function(){
+//     loggerLanding.info('Refreshing Mojang Statuses..')
 
-    let status = 'grey'
-    let tooltipEssentialHTML = ''
-    let tooltipNonEssentialHTML = ''
+//     let status = 'grey'
+//     let tooltipEssentialHTML = ''
+//     let tooltipNonEssentialHTML = ''
 
-    const response = await MojangRestAPI.status()
-    let statuses
-    if(response.responseStatus === RestResponseStatus.SUCCESS) {
-        statuses = response.data
-    } else {
-        loggerLanding.warn('Unable to refresh Mojang service status.')
-        statuses = MojangRestAPI.getDefaultStatuses()
-    }
+//     const response = await MojangRestAPI.status()
+//     let statuses
+//     if(response.responseStatus === RestResponseStatus.SUCCESS) {
+//         statuses = response.data
+//     } else {
+//         loggerLanding.warn('Unable to refresh Mojang service status.')
+//         statuses = MojangRestAPI.getDefaultStatuses()
+//     }
     
-    greenCount = 0
-    greyCount = 0
+//     greenCount = 0
+//     greyCount = 0
 
-    for(let i=0; i<statuses.length; i++){
-        const service = statuses[i]
+//     for(let i=0; i<statuses.length; i++){
+//         const service = statuses[i]
 
-        const tooltipHTML = `<div class="mojangStatusContainer">
-            <span class="mojangStatusIcon" style="color: ${MojangRestAPI.statusToHex(service.status)};">&#8226;</span>
-            <span class="mojangStatusName">${service.name}</span>
-        </div>`
-        if(service.essential){
-            tooltipEssentialHTML += tooltipHTML
-        } else {
-            tooltipNonEssentialHTML += tooltipHTML
-        }
+//         const tooltipHTML = `<div class="mojangStatusContainer">
+//             <span class="mojangStatusIcon" style="color: ${MojangRestAPI.statusToHex(service.status)};">&#8226;</span>
+//             <span class="mojangStatusName">${service.name}</span>
+//         </div>`
+//         if(service.essential){
+//             tooltipEssentialHTML += tooltipHTML
+//         } else {
+//             tooltipNonEssentialHTML += tooltipHTML
+//         }
 
-        if(service.status === 'yellow' && status !== 'red'){
-            status = 'yellow'
-        } else if(service.status === 'red'){
-            status = 'red'
-        } else {
-            if(service.status === 'grey'){
-                ++greyCount
-            }
-            ++greenCount
-        }
+//         if(service.status === 'yellow' && status !== 'red'){
+//             status = 'yellow'
+//         } else if(service.status === 'red'){
+//             status = 'red'
+//         } else {
+//             if(service.status === 'grey'){
+//                 ++greyCount
+//             }
+//             ++greenCount
+//         }
 
-    }
+//     }
 
-    if(greenCount === statuses.length){
-        if(greyCount === statuses.length){
-            status = 'grey'
-        } else {
-            status = 'green'
-        }
-    }
+//     if(greenCount === statuses.length){
+//         if(greyCount === statuses.length){
+//             status = 'grey'
+//         } else {
+//             status = 'green'
+//         }
+//     }
     
-    document.getElementById('mojangStatusEssentialContainer').innerHTML = tooltipEssentialHTML
-    document.getElementById('mojangStatusNonEssentialContainer').innerHTML = tooltipNonEssentialHTML
-    document.getElementById('mojang_status_icon').style.color = MojangRestAPI.statusToHex(status)
-}
+//     document.getElementById('mojangStatusEssentialContainer').innerHTML = tooltipEssentialHTML
+//     document.getElementById('mojangStatusNonEssentialContainer').innerHTML = tooltipNonEssentialHTML
+//     document.getElementById('mojang_status_icon').style.color = MojangRestAPI.statusToHex(status)
+// }
 
 const refreshServerStatus = async (fade = false) => {
     loggerLanding.info('Refreshing Server Status')
@@ -252,21 +254,25 @@ const refreshServerStatus = async (fade = false) => {
     } catch (err) {
         loggerLanding.warn('Unable to refresh server status, assuming offline.')
         loggerLanding.debug(err)
+        console.log('[INFO] : Le serveur is offline')
+        document.getElementById('nom').classList.add('hors_ligne')
+        document.getElementById('joueur').classList.add('hors_ligne')
+
     }
     if(fade){
         $('#server_status_wrapper').fadeOut(250, () => {
-            document.getElementById('landingPlayerLabel').innerHTML = pLabel
-            document.getElementById('player_count').innerHTML = pVal
+            document.getElementById('nom').innerHTML = pLabel
+            document.getElementById('joueur').innerHTML = pVal
             $('#server_status_wrapper').fadeIn(500)
         })
     } else {
-        document.getElementById('landingPlayerLabel').innerHTML = pLabel
-        document.getElementById('player_count').innerHTML = pVal
+        document.getElementById('nom').innerHTML = pLabel
+        document.getElementById('joueur').innerHTML = pVal
     }
-    
+
 }
 
-refreshMojangStatuses()
+// refreshMojangStatuses()
 // Server Status is refreshed in uibinder.js on distributionIndexDone.
 
 // Refresh statuses every hour. The status page itself refreshes every day so...
@@ -700,24 +706,24 @@ function slide_(up){
 }
 
 // Bind news button.
-document.getElementById('newsButton').onclick = () => {
-    // Toggle tabbing.
-    if(newsActive){
-        $('#landingContainer *').removeAttr('tabindex')
-        $('#newsContainer *').attr('tabindex', '-1')
-    } else {
-        $('#landingContainer *').attr('tabindex', '-1')
-        $('#newsContainer, #newsContainer *, #lower, #lower #center *').removeAttr('tabindex')
-        if(newsAlertShown){
-            $('#newsButtonAlert').fadeOut(2000)
-            newsAlertShown = false
-            ConfigManager.setNewsCacheDismissed(true)
-            ConfigManager.save()
-        }
-    }
-    slide_(!newsActive)
-    newsActive = !newsActive
-}
+// document.getElementById('newsButton').onclick = () => {
+//     // Toggle tabbing.
+//     if(newsActive){
+//         $('#landingContainer *').removeAttr('tabindex')
+//         $('#newsContainer *').attr('tabindex', '-1')
+//     } else {
+//         $('#landingContainer *').attr('tabindex', '-1')
+//         $('#newsContainer, #newsContainer *, #lower, #lower #center *').removeAttr('tabindex')
+//         if(newsAlertShown){
+//             $('#newsButtonAlert').fadeOut(2000)
+//             newsAlertShown = false
+//             ConfigManager.setNewsCacheDismissed(true)
+//             ConfigManager.save()
+//         }
+//     }
+//     slide_(!newsActive)
+//     newsActive = !newsActive
+// }
 
 // Array to store article meta.
 let newsArr = null

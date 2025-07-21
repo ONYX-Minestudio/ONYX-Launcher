@@ -2441,6 +2441,9 @@ input:checked + .toggleSwitchSlider:before {
 /* Main content container. */
 #landingContainer {
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     transition: background 2s ease;
     overflow-y: hidden;
@@ -2456,7 +2459,10 @@ input:checked + .toggleSwitchSlider:before {
 .page-principale {
     height: 100%;
     width: 100%;
+
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -2469,15 +2475,36 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.225);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.56);
-    border-right: 1.5px solid rgba(255, 255, 255, 0.56);
-    backdrop-filter: blur(3px);
     height: 80%;
     width: 60%;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
+    inset 0 4px 20px rgba(255, 255, 255, 0.3)
+}
+
+.navbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    backdrop-filter: blur(1px);
+    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+    opacity: 0.6;
+    z-index: -1;
+    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .navbar_party-left {
@@ -2612,16 +2639,35 @@ input:checked + .toggleSwitchSlider:before {
 .home-left_info {
     height: 80%;
     width: 68%;
-    background-color: rgba(255, 255, 255, 0.225);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.56);
-    border-right: 1.5px solid rgba(255, 255, 255, 0.56);
-    backdrop-filter: blur(3px);
-    border-radius: 10px;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+    inset 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.home-left_info:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    backdrop-filter: blur(1px);
+    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+    opacity: 0.6;
+    z-index: -1;
+    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .home-left_title {
@@ -2668,24 +2714,72 @@ input:checked + .toggleSwitchSlider:before {
 .home-rigth_statu-serv {
     height: 35%;
     width: 84%;
-    background-color: rgba(255, 255, 255, 0.225);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.56);
-    border-right: 1.5px solid rgba(255, 255, 255, 0.56);
-    backdrop-filter: blur(3px);
-    border-radius: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
+    inset 0 4px 20px rgba(255, 255, 255, 0.3)
+}
+
+.home-rigth_statu-serv:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    backdrop-filter: blur(1px);
+    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+    opacity: 0.6;
+    z-index: -1;
+    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .home-rigth_donner-statu-serv {
     height: 75%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: top;
+}
+
+.home-rigth_donner-statu-serv > #np-empire {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
     align-items: center;
     color: black;
-    font-family: Verdana;
-    font-size: 12px;
+    
+    /* background-color: red; */
+}
+.home-rigth_donner-statu-serv > #np-empire > #nom {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: rgb(1, 40, 148);
+    font-size: 20px;
+}
+
+.home-rigth_donner-statu-serv > #np-empire > #joueur {
+    font-family: "Knewave", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+}
+
+.hors_ligne{
+    /* color:lightgreen !important; */
+    color: rgb(255, 27, 12) !important;
 }
 
 .home-rigth_separateur {
@@ -2697,14 +2791,34 @@ input:checked + .toggleSwitchSlider:before {
 .home-rigth_liens {
     height: 35%;
     width: 84%;
-    background-color: rgba(255, 255, 255, 0.225);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.56);
-    border-right: 1.5px solid rgba(255, 255, 255, 0.56);
-    backdrop-filter: blur(3px);
-    border-radius: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
+    inset 0 4px 20px rgba(255, 255, 255, 0.3)
+}
+
+.home-rigth_liens:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    backdrop-filter: blur(1px);
+    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+    opacity: 0.6;
+    z-index: -1;
+    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .home-rigth_donner-liens {
@@ -2741,13 +2855,14 @@ input:checked + .toggleSwitchSlider:before {
     /* background-color: aqua; */
     height: 100%;
     width: 100%;
-    position: relative;
 }
 
 #bas-de-page_np-empire_espace {
     /* background-color: aqua; */
-    height: 74.24%;
+    height: 75%;
     width: 100%;
+    display: flex;
+
 }
 
 
@@ -2785,12 +2900,10 @@ input:checked + .toggleSwitchSlider:before {
 } */
 
 /* Lower content container. */
-#landingContainer > .page-principale > .bas-de-page > #bas-de-page_np-empire  > #lower {
+/* #landingContainer > .page-principale > .bas-de-page > #bas-de-page_np-empire  > #lower {
     height: 25.76%;
     display: flex;
-    /* Temporaire */
     background-color: red;
-    /* background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); */
 }
 #landingContainer > .page-principale > .bas-de-page > #bas-de-page_np-empire  > #lower > #left {
     position: relative;
@@ -2822,15 +2935,7 @@ input:checked + .toggleSwitchSlider:before {
     z-index: 500;
     transition: top 2s ease;
     top: 10px;
-}
-#landingContainer > .page-principale > .bas-de-page > #bas-de-page_np-empire  > #lower > #right {
-    position: relative;
-    transition: top 2s ease;
-    top: 0px;
-    height: 100%;
-    width: 33%;
-    display: inline-flex;
-}
+} */
 
 /*******************************************************************************
  *                                                                             *
@@ -3695,26 +3800,70 @@ input:checked + .toggleSwitchSlider:before {
 * * */
 
 /* Main launch content container. */
-#landingContainer > .page-principale > .bas-de-page > #bas-de-page_np-empire  > #lower > #right #launch_content {
+#contener_party-bas {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+}
+
+#landingContainer > .page-principale > .bas-de-page > #bas-de-page_np-empire > #contener_party-bas > #launch_content {
     position: relative;
-    top: 25px;
-    display: inline-flex;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    height: 50%;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+    top: 0%;
+    transition: 2s;
+    /* display: none; */
+}
+
+#landingContainer > .page-principale > .bas-de-page > #bas-de-page_np-empire > #contener_party-bas > #launch_content:disabled {
+    top: 50%;
 }
 
 /* The launch button. */
 #launch_button {
-    background: none;
-    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-shadow: 0px 0px 0px #bebcbb;
-    font-size: 20px;
-    padding: 0px;
-    transition: 0.25s ease;
-    outline: none;
+
+    height: 4.5pc;
+    width: 14.5pc;
+    margin: 0 40px;
+
+    background-color: rgba(255, 255, 255, 0.225);
+    backdrop-filter: blur(3px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 2px solid rgba(255, 255, 255, 0);
+    border-top: 2px solid rgba(255, 255, 255, 0);
+    border-right: 2px solid rgba(255, 255, 255, 0);
+    border-bottom: 0;
+    transition: 0.5s;
+
+    font-family: "Knewave", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
 }
-#launch_button:hover,
+
+#launch_button:hover {
+    border-left: 2px solid rgba(255, 255, 255, 0.56);
+    border-top: 2px solid rgba(255, 255, 255, 0.56);
+    border-right: 2px solid rgba(255, 255, 255, 0.56);
+}
+
+#launch_button:disabled {
+
+    cursor: default;
+    pointer-events: none;
+} 
+
+/* #launch_button:hover,
 #launch_button:focus {
     text-shadow: 0px 0px 20px #fff, 0px 0px 20px #fff;
 }
@@ -3726,13 +3875,33 @@ input:checked + .toggleSwitchSlider:before {
     color: #c7c7c7;
     cursor: default;
     pointer-events: none;
+} */
+
+#details {
+    /* background-color: red; */
+    height: 50%;
+    width: 100%;
+    
+    display: flex;
+    justify-content: end;
+    display: none;
 }
 
 /* Launch details main container, hidden until launch processing begins. */
 #launch_details {
+    height: 80%;
+    width: 350px;
+
     position: relative;
-    top: 25px;
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: rgba(255, 255, 255, 0.225);
+    backdrop-filter: blur(3px);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
  
 /* Left side of launch details container, displays percentage and a divider. */
@@ -3746,9 +3915,9 @@ input:checked + .toggleSwitchSlider:before {
     letter-spacing: 1px;
     text-shadow: 0px 0px 0px #bebcbb;
     font-size: 20px;
-    min-width: 53.21px;
-    max-width: 53.21px;
-    text-align: right;
+    /* min-width: 53.21px;
+    max-width: 53.21px; */
+    text-align: center;
 }
 
 /* Right side of launch details container, displays progress bar and details. */
@@ -3756,6 +3925,7 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 /* Button which opens the server selection view. */

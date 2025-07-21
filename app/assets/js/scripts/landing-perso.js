@@ -28,3 +28,7 @@ navbar_NP_Empire.addEventListener('click', function() {
     console.log('[DEBUG]: Page NP Empire charger')
 })
 
+
+// ratio page principale
+// const box = document.getElementsByClassName('page-principale')
+// if ( > 0) {}

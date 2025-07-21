@@ -3,8 +3,8 @@ updateAvailableTooltip = "Update Available"
 usernamePlaceholder = "Username"
 usernameEditButton = "Edit"
 settingsTooltip = "Settings"
-serverStatus = "SERVER"
-serverStatusPlaceholder = "OFFLINE"
+serverStatus_NP-Empire = "NP Empire"
+serverStatusPlaceholder = "hors-ligne"
 mojangStatus = "MOJANG STATUS"
 mojangStatusTooltipTitle = "Services"
 mojangStatusNETitle = "Non&nbsp;Essential"
@@ -35,8 +35,8 @@ loginPasswordDisclaimer1 = "Your password is sent directly to mojang and never s
 loginPasswordDisclaimer2 = "{appName} is not affiliated with Mojang AB."
 
 [ejs.loginOptions]
-loginOptionsTitle = "Login Options"
-loginWithMicrosoft = "Login with Microsoft"
+loginOptionsTitle = "Bienvenue !"
+loginWithMicrosoft = "Connectez-vous avec Microsoft"
 loginWithMojang = "Login with Mojang"
 cancelButton = "Cancel"
 
@@ -124,15 +124,15 @@ whatsNew = "What's New"
 updateReleaseNotes = "Update Release Notes"
 
 [ejs.waiting]
-waitingText = "Waiting for Microsoft.."
+waitingText = "En attente de Microsoft.."
 
 [ejs.welcome]
-continueButton = "CONTINUE"
+continueButton = "Suivant"
 
 
 [js.discord]
-waiting = "Waiting for Client.."
-state = "Server: {shortId}"
+waiting = "En attente du client.."
+state = "Serveur actuelle: {shortId}"
 
 [js.index]
 microsoftLoginTitle = "Microsoft Login"
@@ -163,12 +163,12 @@ noAccountSelected = "No Account Selected"
 
 [js.landing.selectedServer]
 noSelection = "No Server Selected"
-loading = "Loading.."
+loading = "Chargement.."
 
 [js.landing.serverStatus]
-server = "SERVER"
-offline = "OFFLINE"
-players = "PLAYERS"
+server = "NP Empire"
+offline = "hors-ligne"
+players = "NP Empire"
 
 [js.landing.systemScan]
 checking = "Checking system info.."
@@ -211,8 +211,8 @@ checkConsoleForDetails = "Please check the console (CTRL + Shift + i) for more d
 checking = "Checking for News"
 
 [js.landing.discord]
-loading = "Loading game.."
-joining = "Sailing to Westeros!"
+loading = "Chargement du jeu.."
+joining = "En jeu !"
 joined = "Exploring the Realm!"
 
 [js.overlay]
