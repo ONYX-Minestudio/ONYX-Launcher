@@ -5,7 +5,7 @@
  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Knewave&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
- <div id="landingContainer" >
+ <div id="landingContainer" style="display: none;" >
     
     <div class="page-principale">
         <div class="haut-de-page">
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="bas-de-page">
-            <div id="bas-de-page_home" class="display_none">
+            <div id="bas-de-page_home">
                 <div class="home_party-left">
                     <div class="home-left_info">
                         <div class="home-left_title">Info</div>
@@ -72,8 +72,10 @@
                 </div>
             </div>
 
-            <div id="bas-de-page_np-empire">
-                <div id="bas-de-page_np-empire_espace"></div>
+            <div id="bas-de-page_np-empire"  class="display_none">
+                <div id="bas-de-page_np-empire_espace">
+                    <div>${acc.displayName}</div>
+                </div>
                 <div id="contener_party-bas">
                     <div id="details">
                         <div id="launch_details">

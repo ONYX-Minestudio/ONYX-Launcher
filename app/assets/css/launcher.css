@@ -2475,36 +2475,15 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 .navbar {
+    background-color: rgba(255, 255, 255, 0.225);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.56);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.56);
+    backdrop-filter: blur(3px);
     height: 80%;
     width: 60%;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
-
-    position: relative;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
-    inset 0 4px 20px rgba(255, 255, 255, 0.3)
-}
-
-.navbar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2rem;
-    backdrop-filter: blur(1px);
-    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .navbar_party-left {
@@ -2639,35 +2618,16 @@ input:checked + .toggleSwitchSlider:before {
 .home-left_info {
     height: 80%;
     width: 68%;
+    background-color: rgba(255, 255, 255, 0.225);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.56);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.56);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    position: relative;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
-    inset 0 4px 20px rgba(255, 255, 255, 0.3);
-}
-
-.home-left_info:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2rem;
-    backdrop-filter: blur(1px);
-    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .home-left_title {
@@ -2714,34 +2674,14 @@ input:checked + .toggleSwitchSlider:before {
 .home-rigth_statu-serv {
     height: 35%;
     width: 84%;
+    background-color: rgba(255, 255, 255, 0.225);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.56);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.56);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    position: relative;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
-    inset 0 4px 20px rgba(255, 255, 255, 0.3)
-}
-
-.home-rigth_statu-serv:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2rem;
-    backdrop-filter: blur(1px);
-    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .home-rigth_donner-statu-serv {
@@ -2791,34 +2731,14 @@ input:checked + .toggleSwitchSlider:before {
 .home-rigth_liens {
     height: 35%;
     width: 84%;
+    background-color: rgba(255, 255, 255, 0.225);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.56);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.56);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    position: relative;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
-    inset 0 4px 20px rgba(255, 255, 255, 0.3)
-}
-
-.home-rigth_liens:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2rem;
-    backdrop-filter: blur(1px);
-    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-                inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-    opacity: 0.6;
-    z-index: -1;
-    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .home-rigth_donner-liens {
@@ -2862,6 +2782,7 @@ input:checked + .toggleSwitchSlider:before {
     height: 75%;
     width: 100%;
     display: flex;
+    color: white;
 
 }
 
