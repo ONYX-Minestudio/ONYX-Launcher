@@ -325,7 +325,7 @@ function fullSettingsSave() {
     saveSettingsValues()
     saveModConfiguration()
     ConfigManager.save()
-    saveDropinModConfiguration()
+    // saveDropinModConfiguration()
     saveShaderpackSettings()
 }
 
@@ -848,42 +848,41 @@ function _saveModConfiguration(modConf){
 
 // Drop-in mod elements.
 
-let CACHE_SETTINGS_MODS_DIR
-let CACHE_DROPIN_MODS
+// let CACHE_SETTINGS_MODS_DIR
+// let CACHE_DROPIN_MODS
 
 /**
- * Resolve any located drop-in mods for this server and
- * populate the results onto the UI.
+ * Resolve any located drop-in mods for this server and populate the results onto the UI.
  */
-async function resolveDropinModsForUI(){
-    const serv = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
-    CACHE_SETTINGS_MODS_DIR = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, 'mods')
-    CACHE_DROPIN_MODS = DropinModUtil.scanForDropinMods(CACHE_SETTINGS_MODS_DIR, serv.rawServer.minecraftVersion)
+// async function resolveDropinModsForUI(){
+//     const serv = (await DistroAPI.getDistribution()).getServerById(ConfigManager.getSelectedServer())
+//     CACHE_SETTINGS_MODS_DIR = path.join(ConfigManager.getInstanceDirectory(), serv.rawServer.id, 'mods')
+//     CACHE_DROPIN_MODS = DropinModUtil.scanForDropinMods(CACHE_SETTINGS_MODS_DIR, serv.rawServer.minecraftVersion)
 
-    let dropinMods = ''
+//     let dropinMods = ''
 
-    for(dropin of CACHE_DROPIN_MODS){
-        dropinMods += `<div id="${dropin.fullName}" class="settingsBaseMod settingsDropinMod" ${!dropin.disabled ? 'enabled' : ''}>
-                    <div class="settingsModContent">
-                        <div class="settingsModMainWrapper">
-                            <div class="settingsModStatus"></div>
-                            <div class="settingsModDetails">
-                                <span class="settingsModName">${dropin.name}</span>
-                                <div class="settingsDropinRemoveWrapper">
-                                    <button class="settingsDropinRemoveButton" remmod="${dropin.fullName}">${Lang.queryJS('settings.dropinMods.removeButton')}</button>
-                                </div>
-                            </div>
-                        </div>
-                        <label class="toggleSwitch">
-                            <input type="checkbox" formod="${dropin.fullName}" dropin ${!dropin.disabled ? 'checked' : ''}>
-                            <span class="toggleSwitchSlider"></span>
-                        </label>
-                    </div>
-                </div>`
-    }
+//     for(dropin of CACHE_DROPIN_MODS){
+//         dropinMods += `<div id="${dropin.fullName}" class="settingsBaseMod settingsDropinMod" ${!dropin.disabled ? '' : ''}>
+//                     <div class="settingsModContent">
+//                         <div class="settingsModMainWrapper">
+//                             <div class="settingsModStatus"></div>
+//                             <div class="settingsModDetails">
+//                                 <span class="settingsModName">${dropin.name}</span>
+//                                 <div class="settingsDropinRemoveWrapper">
+//                                     <button class="settingsDropinRemoveButton" remmod="${dropin.fullName}">${Lang.queryJS('settings.dropinMods.removeButton')}</button>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                         <label class="toggleSwitch">
+//                             <input type="checkbox" formod="${dropin.fullName}" dropin ${!dropin.disabled ? 'checked' : ''}>
+//                             <span class="toggleSwitchSlider"></span>
+//                         </label>
+//                     </div>
+//                 </div>`
+//     }
 
-    document.getElementById('settingsDropinModsContent').innerHTML = dropinMods
-}
+//     document.getElementById('settingsDropinModsContent').innerHTML = dropinMods
+// }
 
 /**
  * Bind the remove button for each loaded drop-in mod.
@@ -944,34 +943,34 @@ function bindDropinModFileSystemButton(){
  * Save drop-in mod states. Enabling and disabling is just a matter
  * of adding/removing the .disabled extension.
  */
-function saveDropinModConfiguration(){
-    for(dropin of CACHE_DROPIN_MODS){
-        const dropinUI = document.getElementById(dropin.fullName)
-        if(dropinUI != null){
-            const dropinUIEnabled = dropinUI.hasAttribute('enabled')
-            if(DropinModUtil.isDropinModEnabled(dropin.fullName) != dropinUIEnabled){
-                DropinModUtil.toggleDropinMod(CACHE_SETTINGS_MODS_DIR, dropin.fullName, dropinUIEnabled).catch(err => {
-                    if(!isOverlayVisible()){
-                        setOverlayContent(
-                            Lang.queryJS('settings.dropinMods.failedToggleTitle'),
-                            err.message,
-                            Lang.queryJS('settings.dropinMods.okButton')
-                        )
-                        setOverlayHandler(null)
-                        toggleOverlay(true)
-                    }
-                })
-            }
-        }
-    }
-}
+// function saveDropinModConfiguration(){
+//     for(dropin of CACHE_DROPIN_MODS){
+//         const dropinUI = document.getElementById(dropin.fullName)
+//         if(dropinUI != null){
+//             const dropinUIEnabled = dropinUI.hasAttribute('enabled')
+//             if(DropinModUtil.isDropinModEnabled(dropin.fullName) != dropinUIEnabled){
+//                 DropinModUtil.toggleDropinMod(CACHE_SETTINGS_MODS_DIR, dropin.fullName, dropinUIEnabled).catch(err => {
+//                     if(!isOverlayVisible()){
+//                         setOverlayContent(
+//                             Lang.queryJS('settings.dropinMods.failedToggleTitle'),
+//                             err.message,
+//                             Lang.queryJS('settings.dropinMods.okButton')
+//                         )
+//                         setOverlayHandler(null)
+//                         toggleOverlay(true)
+//                     }
+//                 })
+//             }
+//         }
+//     }
+// }
 
 // Refresh the drop-in mods when F5 is pressed.
 // Only active on the mods tab.
 document.addEventListener('keydown', async (e) => {
     if(getCurrentView() === VIEWS.settings && selectedSettingsTab === 'settingsTabMods'){
         if(e.key === 'F5'){
-            await reloadDropinMods()
+            // await reloadDropinMods()
             saveShaderpackSettings()
             await resolveShaderpacksForUI()
         }
@@ -979,7 +978,7 @@ document.addEventListener('keydown', async (e) => {
 })
 
 async function reloadDropinMods(){
-    await resolveDropinModsForUI()
+    // await resolveDropinModsForUI()
     bindDropinModsRemoveButton()
     bindDropinModFileSystemButton()
     bindModsToggleSwitch()
@@ -1131,10 +1130,10 @@ function animateSettingsTabRefresh(){
  */
 async function prepareModsTab(first){
     await resolveModsForUI()
-    await resolveDropinModsForUI()
+    // await resolveDropinModsForUI()
     await resolveShaderpacksForUI()
-    bindDropinModsRemoveButton()
-    bindDropinModFileSystemButton()
+    // bindDropinModsRemoveButton()
+    // bindDropinModFileSystemButton()
     bindShaderpackButton()
     bindModsToggleSwitch()
     await loadSelectedServerOnModsTab()
@@ -1388,8 +1387,8 @@ async function prepareJavaTab(){
     bindMinMaxRam(server)
     bindRangeSlider(server)
     populateMemoryStatus()
-    populateJavaReqDesc(server)
-    populateJvmOptsLink(server)
+    // populateJavaReqDesc(server)
+    // populateJvmOptsLink(server)
 }
 
 /**
@@ -1402,10 +1401,10 @@ const settingsAboutChangelogText   = settingsTabAbout.getElementsByClassName('se
 const settingsAboutChangelogButton = settingsTabAbout.getElementsByClassName('settingsChangelogButton')[0]
 
 // Bind the devtools toggle button.
-document.getElementById('settingsAboutDevToolsButton').onclick = (e) => {
-    let window = remote.getCurrentWindow()
-    window.toggleDevTools()
-}
+// document.getElementById('settingsAboutDevToolsButton').onclick = (e) => {
+//     let window = remote.getCurrentWindow()
+//     window.toggleDevTools()
+// }
 
 /**
  * Return whether or not the provided version is a prerelease.
@@ -1453,7 +1452,7 @@ function populateAboutVersionInformation(){
  */
 function populateReleaseNotes(){
     $.ajax({
-        url: 'https://github.com/dscalzi/HeliosLauncher/releases.atom',
+        url: 'https://github.com/ONYX-Minestudio/ONYX-Launcher/releases.atom',
         success: (data) => {
             const version = 'v' + remote.app.getVersion()
             const entries = $(data).find('entry')

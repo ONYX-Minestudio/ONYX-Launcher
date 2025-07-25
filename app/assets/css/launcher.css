@@ -1627,7 +1627,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Account logout button shared styles. */
 .settingsAuthAccountLogOut {
-    opacity: 0;
+    opacity: 1;
     border: 1px solid rgb(241, 55, 55);
     color: rgb(241, 55, 55);
     background: none;
@@ -1649,9 +1649,9 @@ input:checked + .toggleSwitchSlider:before {
     border: 1px solid rgb(185, 47, 47);
     color: rgb(185, 47, 47);
 }
-.settingsAuthAccount:hover .settingsAuthAccountLogOut {
+/* .settingsAuthAccount:hover .settingsAuthAccountLogOut {
     opacity: 1;
-}
+} */
 
 /* * *
 * Settings View (Minecraft Tab)
