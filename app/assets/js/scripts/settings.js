@@ -638,25 +638,21 @@ function populateAuthAccounts(){
     authKeys.forEach((val) => {
         const acc = authAccounts[val]
 
-        const accHtml = `<div class="settingsAuthAccount" uuid="${acc.uuid}">
+        const accHtml = `<div class="settingsAuthAccount theme_glace" uuid="${acc.uuid}">
             <div class="settingsAuthAccountLeft">
                 <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="https://mc-heads.net/body/${acc.uuid}/60">
             </div>
             <div class="settingsAuthAccountRight">
                 <div class="settingsAuthAccountDetails">
                     <div class="settingsAuthAccountDetailPane">
-                        <div class="settingsAuthAccountDetailTitle">${Lang.queryJS('settings.authAccountPopulate.username')}</div>
-                        <div class="settingsAuthAccountDetailValue">${acc.displayName}</div>
-                    </div>
-                    <div class="settingsAuthAccountDetailPane">
-                        <div class="settingsAuthAccountDetailTitle">${Lang.queryJS('settings.authAccountPopulate.uuid')}</div>
-                        <div class="settingsAuthAccountDetailValue">${acc.uuid}</div>
+                        <div class="settingsAuthAccountDetailTitle font-a-plume">${Lang.queryJS('settings.authAccountPopulate.username')}</div>
+                        <div class="settingsAuthAccountDetailValue font-minecraft">${acc.displayName}</div>
                     </div>
                 </div>
                 <div class="settingsAuthAccountActions">
                     <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>' + Lang.queryJS('settings.authAccountPopulate.selectedAccount') : '>' + Lang.queryJS('settings.authAccountPopulate.selectAccount')}</button>
                     <div class="settingsAuthAccountWrapper">
-                        <button class="settingsAuthAccountLogOut">${Lang.queryJS('settings.authAccountPopulate.logout')}</button>
+                        <button class="settingsAuthAccountLogOut font-a-plume">${Lang.queryJS('settings.authAccountPopulate.logout')}</button>
                     </div>
                 </div>
             </div>

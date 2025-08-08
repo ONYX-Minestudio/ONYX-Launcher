@@ -8,15 +8,15 @@
                 <div id="settingsNavItemsContent">
                     <button class="settingsNavItem" rSc="settingsTabAccount" id="settingsNavAccount" selected><%- lang('settings.navAccount') %></button>
                     <button class="settingsNavItem" rSc="settingsTabMinecraft"><%- lang('settings.navMinecraft') %></button>
-                    <button class="settingsNavItem" rSc="settingsTabMods"><%- lang('settings.navMods') %></button>
-                    <button class="settingsNavItem" rSc="settingsTabJava"><%- lang('settings.navJava') %></button>
+                    <!-- <button class="settingsNavItem" rSc="settingsTabMods"><%- lang('settings.navMods') %></button> -->
+                    <!-- <button class="settingsNavItem" rSc="settingsTabJava"><%- lang('settings.navJava') %></button> -->
                     <!-- <button class="settingsNavItem" rSc="settingsTabLauncher"><%- lang('settings.navLauncher') %></button> -->
-                    <div class="settingsNavSpacer"></div>
+                    <!-- <div class="settingsNavSpacer"></div> -->
                     <!-- <button class="settingsNavItem" rSc="settingsTabAbout"><%- lang('settings.navAbout') %></button> -->
                     <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate"><%- lang('settings.navUpdates') %></button>
-                    <div id="settingsNavContentBottom">
+                    <div id="settingsNavContentBottom" class="display_center display_colomn">
                         <div class="settingsNavDivider"></div>
-                        <button id="settingsNavDone"><%- lang('settings.navDone') %></button>
+                        <button id="settingsNavDone" class="theme_glace font-a-plume display_center"><%- lang('settings.navDone') %></button>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
         <div id="settingsTabAccount" class="settingsTab">
             <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText"><%- lang('settings.tabAccountHeaderText') %></span>
-                <span class="settingsTabHeaderDesc"><%- lang('settings.tabAccountHeaderDesc') %></span>
+                <span class="settingsTabHeaderDesc display_left"><%- lang('settings.tabAccountHeaderDesc') %></span>
             </div>
             <div class="settingsAuthAccountTypeContainer">
                 <div class="settingsAuthAccountTypeHeader">
@@ -40,13 +40,16 @@
                         <span><%- lang('settings.microsoftAccount') %></span>
                     </div>
                     <div class="settingsAuthAccountTypeHeaderRight">
-                        <button class="settingsAddAuthAccount" id="settingsAddMicrosoftAccount"><%- lang('settings.addMicrosoftAccount') %></button>
+                        <!-- <button class="settingsAddAuthAccount" id="settingsAddMicrosoftAccount"></button> -->
                     </div>
                 </div>
                 
                 <div class="settingsCurrentAccounts" id="settingsCurrentMicrosoftAccounts">
                     <!-- Microsoft auth accounts populated here. -->
                 </div>
+
+                <div class="ajout-compte-microsoft display_center font-a-plume settingsAddAuthAccount theme_glace" id="settingsAddMicrosoftAccount"><%- lang('settings.addMicrosoftAccount') %></div>
+                
             </div>
 
             <!-- <div class="settingsAuthAccountTypeContainer">
@@ -70,57 +73,180 @@
             </div> -->
             
         </div>
-        <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
-            <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText"><%- lang('settings.minecraftTabHeaderText') %></span>
-                <span class="settingsTabHeaderDesc"><%- lang('settings.minecraftTabHeaderDesc') %></span>
-            </div>
-            <div id="settingsGameResolutionContainer">
-                <span class="settingsFieldTitle"><%- lang('settings.gameResolutionTitle') %></span>
-                <div id="settingsGameResolutionContent">
-                    <input type="number" id="settingsGameWidth" min="0" cValue="GameWidth">
-                    <div id="settingsGameResolutionCross">&#10006;</div>
-                    <input type="number" id="settingsGameHeight" min="0" cValue="GameHeight">
-                </div>
-            </div>
+        <div id="settingsTabMinecraft" class="settingsTab " style="display: none;">
 
-            <div class="settingsFieldContainer">
-                <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle"><%- lang('settings.launchFullscreenTitle') %></span>
+            <!-- Paramètre Minecraft -->
+             <div class="theme_glace contour_siting setting_contour_parametre-de-connection">
+                <div class="settingsTabHeader">
+                    <span class="settingsTabHeaderText"><%- lang('settings.minecraftTabHeaderText') %></span>
+                    <div class="mini-mini-espace_siting"></div>
+                    <span class="settingsTabHeaderDesc"><%- lang('settings.minecraftTabHeaderDesc') %></span>
                 </div>
-                <div class="settingsFieldRight">
-                    <label class="toggleSwitch">
-                        <input type="checkbox" cValue="Fullscreen">
-                        <span class="toggleSwitchSlider"></span>
-                    </label>
+                <div id="settingsGameResolutionContainer">
+                    <span class="settingsFieldTitle"><%- lang('settings.gameResolutionTitle') %></span>
+                    <div id="settingsGameResolutionContent">
+                        <input type="number" id="settingsGameWidth" min="0" cValue="GameWidth">
+                        <div id="settingsGameResolutionCross">&#10006;</div>
+                        <input type="number" id="settingsGameHeight" min="0" cValue="GameHeight">
+                    </div>
+                </div>
+
+                <div class="settingsFieldContainer">
+                    <div class="settingsFieldLeft display_colomn">
+                        <span class="settingsFieldTitle"><%- lang('settings.launchFullscreenTitle') %></span>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="Fullscreen">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="settingsFieldContainer">
+                    <div class="settingsFieldLeft">
+                        <span class="settingsFieldTitle"><%- lang('settings.autoConnectTitle') %></span>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="AutoConnect">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="settingsFieldContainer ">
+                    <div class="settingsFieldLeft">
+                        <span class="settingsFieldTitle"><%- lang('settings.launchDetachedTitle') %></span>
+                        <span class="settingsFieldDesc"><%- lang('settings.launchDetachedDesc') %></span>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="LaunchDetached">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
             
-            <div class="settingsFieldContainer">
-                <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle"><%- lang('settings.autoConnectTitle') %></span>
+            <div class="espace_siting"></div>
+
+            <!-- Paramètre des mods optionnel-->
+             <div class="theme_glace contour_siting setting_contour_parametre-des-mods-optionnels">
+                <div class="settingsTabHeader">
+                    <span class="settingsTabHeaderText display_center"><%- lang('settings.tabModsHeaderText') %></span>
+                    <div class="mini-mini-espace_siting"></div>
+                    <span class="settingsTabHeaderDesc"><%- lang('settings.tabModsHeaderDesc') %></span>
                 </div>
-                <div class="settingsFieldRight">
-                    <label class="toggleSwitch">
-                        <input type="checkbox" cValue="AutoConnect">
-                        <span class="toggleSwitchSlider"></span>
-                    </label>
+                <div class="settingsSelServContainer" style="display: none;">
+                    <div class="settingsSelServContent">
+
+                    </div>
+                    <div class="settingsSwitchServerContainer">
+                        <div class="settingsSwitchServerContent">
+                            <button class="settingsSwitchServerButton"><%- lang('settings.switchServerButton') %></button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="settingsFieldContainer">
-                <div class="settingsFieldLeft">
-                    <span class="settingsFieldTitle"><%- lang('settings.launchDetachedTitle') %></span>
-                    <span class="settingsFieldDesc"><%- lang('settings.launchDetachedDesc') %></span>
+                <div id="settingsModsContainer">
+                    <div id="settingsReqModsContainer" class="display_none">
+                        <div class="settingsModsHeader"><%- lang('settings.requiredMods') %></div>
+                        <div id="settingsReqModsContent">
+
+                        </div>
+                    </div>
+                    <div id="settingsOptModsContainer">
+                        <div class="settingsModsHeader"><%- lang('settings.optionalMods') %></div>
+                        <div id="settingsOptModsContent">
+                            
+                        </div>
+                    </div>
+                    <!-- <div id="settingsDropinModsContainer">
+                        <div class="settingsModsHeader"><%- lang('settings.dropinMods') %></div>
+                        <button id="settingsDropinFileSystemButton"><%- lang('settings.addMods') %> <span id="settingsDropinRefreshNote"><%- lang('settings.dropinRefreshNote') %></span></button>
+                        <div id="settingsDropinModsContent">
+                            
+                        </div>
+                    </div> -->
+                    <div id="settingsShadersContainer">
+                        <div class="settingsModsHeader"><%- lang('settings.shaderpacks') %></div>
+                        <div id="settingsShaderpackDesc"><%- lang('settings.shaderpackDesc') %></div>
+                        <div id="settingsShaderpackWrapper">
+                            <button id="settingsShaderpackButton"> + </button>
+                            <div class="settingsSelectContainer">
+                                <div class="settingsSelectSelected" id="settingsShadersSelected"><%- lang('settings.selectShaderpack') %></div>
+                                <div class="settingsSelectOptions" id="settingsShadersOptions" hidden>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="settingsFieldRight">
-                    <label class="toggleSwitch">
-                        <input type="checkbox" cValue="LaunchDetached">
-                        <span class="toggleSwitchSlider"></span>
-                    </label>
+             </div>
+
+             <div class="espace_siting"></div>
+
+             <!-- Configuration de la RAM -->
+             <div class="theme_glace theme_glace display_center display_colomn setting_contour_parametre-configuration-de-la-ram">
+                <div class="settingsTabHeader">
+                    <span class="settingsTabHeaderText display_center"><%- lang('settings.tabJavaHeaderText') %></span>
+                    <div class="mini-espace_siting"></div>
+                    <span class="settingsTabHeaderDesc"><%- lang('settings.tabJavaHeaderDesc') %></span>
+                </div>
+                <div class="settingsSelServContainer" style="display: none;">
+                    <div class="settingsSelServContent">
+
+                    </div>
+                    <div class="settingsSwitchServerContainer">
+                        <div class="settingsSwitchServerContent">
+                            <button class="settingsSwitchServerButton"><%- lang('settings.switchServerButton') %></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="settingsMemoryContainer">
+                    <div id="settingsMemoryTitle"><%- lang('settings.memoryTitle') %></div>
+                    <div id="settingsMemoryContent">
+                        <div id="settingsMemoryContentLeft">
+                            <div class="settingsMemoryContentItem">
+                                <span class="settingsMemoryHeader"><%- lang('settings.maxRAM') %></span>
+                                <div class="settingsMemoryActionContainer">
+                                    <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM" serverDependent min="3" max="8" value="3" step="0.5">
+                                        <div class="rangeSliderBar"></div>
+                                        <div class="rangeSliderTrack"></div>
+                                    </div>
+                                    <span id="settingsMaxRAMLabel" class="settingsMemoryLabel">3G</span>
+                                </div>
+                            </div>
+                            <div class="settingsMemoryContentItem">
+                                <span class="settingsMemoryHeader"><%- lang('settings.minRAM') %></span>
+                                <div class="settingsMemoryActionContainer">
+                                    <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM" serverDependent min="3" max="8" value="3" step="0.5">
+                                        <div class="rangeSliderBar"></div>
+                                        <div class="rangeSliderTrack"></div>
+                                    </div>
+                                    <span id="settingsMinRAMLabel" class="settingsMemoryLabel">3G</span>
+                                </div>
+                            </div>
+                            <div id="settingsMemoryDesc"><%- lang('settings.memoryDesc') %></div>
+                        </div>
+                        <div id="settingsMemoryContentRight">
+                            <div id="settingsMemoryStatus">
+                                <div class="settingsMemoryStatusContainer">
+                                    <span class="settingsMemoryStatusTitle"><%- lang('settings.memoryTotalTitle') %></span>
+                                    <span id="settingsMemoryTotal" class="settingsMemoryStatusValue">16G</span>
+                                </div>
+                                <div class="settingsMemoryStatusContainer">
+                                    <span class="settingsMemoryStatusTitle"><%- lang('settings.memoryAvailableTitle') %></span>
+                                    <span id="settingsMemoryAvail" class="settingsMemoryStatusValue">7.3G</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="settingsTabMods" class="settingsTab" style="display: none;">
+
+
+        <!-- <div id="settingsTabMods" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText"><%- lang('settings.tabModsHeaderText') %></span>
                 <span class="settingsTabHeaderDesc"><%- lang('settings.tabModsHeaderDesc') %></span>
@@ -148,13 +274,19 @@
                         
                     </div>
                 </div>
-                <!-- <div id="settingsDropinModsContainer">
+
+
+                Le code est en commentaire : 
+                <div id="settingsDropinModsContainer">
                     <div class="settingsModsHeader"><%- lang('settings.dropinMods') %></div>
                     <button id="settingsDropinFileSystemButton"><%- lang('settings.addMods') %> <span id="settingsDropinRefreshNote"><%- lang('settings.dropinRefreshNote') %></span></button>
                     <div id="settingsDropinModsContent">
                         
                     </div>
-                </div> -->
+                </div>
+                Fin du code en commentaire
+
+
                 <div id="settingsShadersContainer">
                     <div class="settingsModsHeader"><%- lang('settings.shaderpacks') %></div>
                     <div id="settingsShaderpackDesc"><%- lang('settings.shaderpackDesc') %></div>
@@ -169,9 +301,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="settingsTabJava" class="settingsTab" style="display: none;">
-            <div class="settingsTabHeader">
+        </div> -->
+
+
+        <!-- <div id="settingsTabJava" class="settingsTab" style="display: none;"> -->
+            <!-- <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText"><%- lang('settings.tabJavaHeaderText') %></span>
                 <span class="settingsTabHeaderDesc"><%- lang('settings.tabJavaHeaderDesc') %></span>
             </div>
@@ -224,7 +358,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- <div class="settingsFileSelContainer">
                 <div class="settingsFileSelTitle"><%- lang('settings.javaExecutableTitle') %></div>
                 <div class="settingsFileSelContent">
@@ -271,7 +405,7 @@
                 </div>
                 <div id="settingsJVMOptsDesc"><%- lang('settings.jvmOptsDesc') %><br><a href="#" id="settingsJvmOptsLink">Available Options</a></div>
             </div> -->
-        </div>
+        <!-- </div> -->
         <div id="settingsTabLauncher" class="settingsTab display_none" style="display: none;">
             <!-- <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText"><%- lang('settings.launcherTabHeaderText') %></span>
@@ -359,16 +493,18 @@
         <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
                 <span class="settingsTabHeaderText"><%- lang('settings.launcherUpdatesHeaderText') %></span>
-                <span class="settingsTabHeaderDesc"><%- lang('settings.launcherUpdatesHeaderDesc') %></span>
+                <span class="settingsTabHeaderDesc display_left"><%- lang('settings.launcherUpdatesHeaderDesc') %></span>
             </div>
-            <div id="settingsUpdateStatusContainer">
-                <div id="settingsUpdateStatusContent">
-                    <div id="settingsAboutCurrentHeadline">
+            <div id="settingsUpdateStatusContainer" class="theme_glace">
+                <div id="settingsUpdateStatusContent" class="display_colomn">
+                    <div id="settingsAboutCurrentHeadline" class="display_center">
                         <img id="settingsAboutLogo" src="./assets/images/onyx_logo_detoutrer.png">
                         <span id="settingsAboutTitle"><%- lang('settings.aboutTitle', { appName: lang('app.title') }) %></span>
                     </div>
+                    <div class="mini-mini-espace_siting"></div>
+                    <div class="mini-mini-espace_siting"></div>
                     <div id="settingsUpdateStatusHeadline">
-                        <span id="settingsUpdateTitle"><!-- Vous utilisez la dernière version. --></span>
+                        <span id="settingsUpdateTitle"><!-- Vous utilisez la dernière version : --></span>
                     </div>
                     <div id="settingsUpdateVersion">
                         <div id="settingsUpdateVersionCheck">&#10003;</div>
@@ -386,7 +522,7 @@
                 </div>
             </div>
 
-            <div class="settingsFieldContainer">
+            <div class="settingsFieldContainer theme_glace display_center">
                 <div class="settingsFieldLeft">
                     <span class="settingsFieldTitle"><%- lang('settings.allowPrereleaseTitle') %></span>
                     <span class="settingsFieldDesc"><%- lang('settings.allowPrereleaseDesc') %></span>
